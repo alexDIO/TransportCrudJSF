@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TransportCrudJSF:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="TransportCrudJSF.war">
+      <element id="artifact" artifact-name="TransportCrudJSF:war exploded" />
+    </root>
+  </artifact>
+</component>

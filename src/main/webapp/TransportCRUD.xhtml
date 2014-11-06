@@ -10,15 +10,20 @@
 </head>
 <h:body>
     <h:form>
-        <h3>Combo Box</h3>
-        <h:selectOneMenu value="#{userData.data}">
-            <f:selectItem itemValue="1" itemLabel="Item 1" />
-            <f:selectItem itemValue="2" itemLabel="Item 2" />
-            <f:selectItem itemValue="3" itemLabel="Item 3" />
-            <f:selectItem itemValue="4" itemLabel="Item 4" />
-            <f:selectItem itemValue="5" itemLabel="Item 5" />
+        <h3>Transport Type</h3>
+        <h:selectOneMenu value="#{manager.transportType}">
+            <f:selectItem itemValue="Limousine" itemLabel="Limousine" />
+            <f:selectItem itemValue="Coupe" itemLabel="Coupe" />
+            <f:selectItem itemValue="Sedan" itemLabel="Sedan" />
+            <f:selectItem itemValue="Bus" itemLabel="Bus" />
+            <f:selectItem itemValue="Trolleybus" itemLabel="Trolleybus" />
+            <f:selectItem itemValue="Tram" itemLabel="Tram" />
+            <f:selectItem itemValue="Truck" itemLabel="Truck" />
         </h:selectOneMenu>
-        <h:commandButton value="Submit" action="result" />
+        <h3>Mark</h3>
+
+
+        <h:commandButton value="Add" action="result" />
     </h:form>
 </h:body>
 </html>
