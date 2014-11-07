@@ -9,21 +9,93 @@
     <title>Transport CRUD</title>
 </head>
 <h:body>
+
     <h:form>
-        <h3>Transport Type</h3>
-        <h:selectOneMenu value="#{manager.transportType}">
-            <f:selectItem itemValue="Limousine" itemLabel="Limousine" />
-            <f:selectItem itemValue="Coupe" itemLabel="Coupe" />
-            <f:selectItem itemValue="Sedan" itemLabel="Sedan" />
-            <f:selectItem itemValue="Bus" itemLabel="Bus" />
-            <f:selectItem itemValue="Trolleybus" itemLabel="Trolleybus" />
-            <f:selectItem itemValue="Tram" itemLabel="Tram" />
-            <f:selectItem itemValue="Truck" itemLabel="Truck" />
-        </h:selectOneMenu>
-        <h3>Mark</h3>
-
-
-        <h:commandButton value="Add" action="result" />
+        <table>
+            <tr>
+                <td>
+                    <span>Transport type</span>
+                </td>
+                <td>
+                    <h:selectOneMenu value="#{manager.transportType}">
+                        <f:selectItem itemValue="Limousine" itemLabel="Limousine" itemDisabled=""/>
+                        <f:selectItem itemValue="Coupe" itemLabel="Coupe" />
+                        <f:selectItem itemValue="Sedan" itemLabel="Sedan" />
+                        <f:selectItem itemValue="Bus" itemLabel="Bus" />
+                        <f:selectItem itemValue="Trolleybus" itemLabel="Trolleybus" />
+                        <f:selectItem itemValue="Tram" itemLabel="Tram" />
+                        <f:selectItem itemValue="Truck" itemLabel="Truck" />
+                    </h:selectOneMenu>
+                </td>
+                <td>
+                    <span>Mark</span>
+                </td>
+                <td>
+                    <h:inputText value="#{manager.mark}" />
+                </td>
+                <td>
+                    <span>Color</span>
+                </td>
+                <td>
+                    <h:selectOneMenu value="#{manager.color}">
+                        <f:selectItem itemValue="black" itemLabel="black" />
+                        <f:selectItem itemValue="white" itemLabel="white" />
+                        <f:selectItem itemValue="grey" itemLabel="grey" />
+                        <f:selectItem itemValue="red" itemLabel="red" />
+                        <f:selectItem itemValue="orange" itemLabel="orange" />
+                        <f:selectItem itemValue="yellow" itemLabel="yellow" />
+                        <f:selectItem itemValue="blue" itemLabel="blue" />
+                        <f:selectItem itemValue="brown" itemLabel="brown" />
+                    </h:selectOneMenu>
+                </td>
+                <td>Manufacture year</td>
+                <td>
+                    <h:inputText value="#{manager.manufactureYear}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Passengers count</span>
+                </td>
+                <td>
+                    <h:inputText value="#{manager.passengersCount}" />
+                </td>
+                <td>
+                    <span>Energy source</span>
+                </td>
+                <td>
+                    <h:selectOneMenu value="#{manager.energySource}">
+                        <f:selectItem itemValue="petrol" itemLabel="petrol" />
+                        <f:selectItem itemValue="gas" itemLabel="gas" />
+                        <f:selectItem itemValue="electricity" itemLabel="electricity" />
+                    </h:selectOneMenu>
+                </td>
+                <td>
+                    <span>Transmission</span>
+                </td>
+                <td>
+                    <h:selectOneMenu value="#{manager.transmission}">
+                        <f:selectItem itemValue="manual" itemLabel="manual" />
+                        <f:selectItem itemValue="automate" itemLabel="automate" />
+                    </h:selectOneMenu>
+                </td>
+                <td>
+                    <span>Load</span>
+                </td>
+                <td>
+                    <h:inputText value="#{manager.load}" />
+                </td>
+                <td>
+                    <h:inputHidden name="identifier" value="#{manager.id}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h:commandButton value="Add" action="result" />
+                </td>
+            </tr>
+        </table>
     </h:form>
+
 </h:body>
 </html>

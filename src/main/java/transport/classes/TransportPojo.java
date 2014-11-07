@@ -1,13 +1,9 @@
-package jsf;
-
-import javax.faces.bean.ManagedBean;
+package transport.classes;
 
 /**
- * Created by olomakovskyi on 11/6/2014.
+ * Created by Alex on 9/6/2014.
  */
-
-@ManagedBean(name = "manager", eager = true)
-public class JSFTransportManager {
+public class TransportPojo {
     private int id;
     private String transportType;
     private String mark;
@@ -18,7 +14,38 @@ public class JSFTransportManager {
     private String transmission;
     private int load;
 
+    public TransportPojo() {
 
+    }
+
+    public TransportPojo(int id, String transportType, String mark, String color, int manufactureYear, int passengersCount, String energySource, String transmission, int load) {
+        this.id = id;
+        this.transportType = transportType;
+        this.mark = mark;
+        this.color = color;
+        this.manufactureYear = manufactureYear;
+        this.passengersCount = passengersCount;
+        this.energySource = energySource;
+        this.transmission = transmission;
+        this.load = load;
+    }
+
+    public TransportPojo(int id, String transportType, String mark, String color, int manufactureYear, String energySource) {
+        this.id = id;
+        this.transportType = transportType;
+        this.mark = mark;
+        this.color = color;
+        this.manufactureYear = manufactureYear;
+        this.energySource = energySource;
+    }
+
+    public String getTransportType() {
+        return this.transportType;
+    }
+
+    public void setTransportType(String transportType) {
+        this.transportType = transportType;
+    }
 
     public int getId() {
         return id;
@@ -26,14 +53,6 @@ public class JSFTransportManager {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getTransportType() {
-        return transportType;
-    }
-
-    public void setTransportType(String transportType) {
-        this.transportType = transportType;
     }
 
     public String getMark() {
