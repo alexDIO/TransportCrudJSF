@@ -5,6 +5,6 @@ package transport.storages;
  */
 public class TransportStorageException extends Exception {
     public String toString() {
-        return "Unknown forweb. Check properties file.";
+        return "Unknown storage. Check properties file.";
     }
 }

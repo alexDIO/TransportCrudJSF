@@ -4,31 +4,27 @@ package transport.classes;
  * Created by olomakovskyi on 8/19/2014.
  */
 public abstract class Transport implements ITransport {
-    protected Integer id;
-    protected String transportType;
+    protected int id;
+    protected final String transportType;
     protected String mark;
     protected String color;
-    protected Integer manufactureYear;
+    protected int manufactureYear;
     protected String energySource;
 
     protected Transport(String transportType) {
         this.transportType = transportType;
     }
 
-    public Integer getId() {
-        return id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public int getId() {
+        return id;
     }
 
     public String getTransportType() {
         return transportType;
-    }
-
-    public void setTransportType(String transportType) {
-        this.transportType = transportType;
     }
 
     public String getMark() {
@@ -47,11 +43,11 @@ public abstract class Transport implements ITransport {
         this.color = color;
     }
 
-    public Integer getManufactureYear() {
+    public int getManufactureYear() {
         return manufactureYear;
     }
 
-    public void setManufactureYear(Integer manufactureYear) {
+    public void setManufactureYear(int manufactureYear) {
         this.manufactureYear = manufactureYear;
     }
 

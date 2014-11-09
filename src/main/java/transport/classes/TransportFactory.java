@@ -1,24 +1,27 @@
 package transport.classes;
 
-import java.util.Map;
-
 /**
  * Created by olomakovskyi on 9/5/2014.
  */
+
+
 public class TransportFactory {
-    private Map<String, Class<? extends Transport>> map;
-
-    public TransportFactory(Map<String, Class<? extends Transport>> map){
-        this.map = map;
-    }
-
-    public Transport getTransport(String transportType) {
-        try {
-            return map.get(transportType.toLowerCase()).newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+    public static Transport getTransport(String transportType) {
+        switch (transportType.trim().toLowerCase()) {
+            case "coupe":
+                return new Coupe();
+            case "sedan":
+                return new Sedan();
+            case "limousine":
+                return new Limousine();
+            case "truck":
+                return new Truck();
+            case "bus":
+                return new Bus();
+            case "trolleybus":
+                return new TrolleyBus();
+            case "tram":
+                return new Tram();
         }
         return null;
     }

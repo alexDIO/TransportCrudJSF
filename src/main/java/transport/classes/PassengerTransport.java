@@ -4,7 +4,7 @@ package transport.classes;
  * Created by olomakovskyi on 8/19/2014.
  */
 public abstract class PassengerTransport extends Transport {
-    protected Integer passengersCount;
+    protected int passengersCount;
 
     protected PassengerTransport(String transportType) {
         super(transportType);

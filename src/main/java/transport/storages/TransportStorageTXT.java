@@ -1,11 +1,12 @@
 package transport.storages;
 
-import transport.*;
-import transport.classes.*;
-
+import transport.TransportPropertiesHolder;
+import transport.classes.Transport;
+import transport.classes.TransportConverter;
+import transport.classes.TransportFactory;
+import transport.classes.TransportPojo;
 
 import java.io.*;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,10 +17,9 @@ public class TransportStorageTXT implements TransportStorage {
     private final TransportPropertiesHolder propertiesHolder;
     private final TransportConverter converter;
 
-    public TransportStorageTXT(TransportPropertiesHolder propertiesHolder, TransportConverter converter, Date creationDate) {
+    public TransportStorageTXT(TransportPropertiesHolder propertiesHolder, TransportConverter converter) {
         this.propertiesHolder = propertiesHolder;
         this.converter = converter;
-        System.out.println(String.format("Storage was created at %s", creationDate));
     }
 
     @Override

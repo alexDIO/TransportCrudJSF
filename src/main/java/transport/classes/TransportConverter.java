@@ -1,16 +1,12 @@
 package transport.classes;
 
-import hibernate.*;
-
 /**
  * Created by olomakovskyi on 8/19/2014.
  */
 public class TransportConverter{
-    private final TransportEntityFactory entityFactory;
     private final TransportFactory transportFactory;
 
-    public TransportConverter(TransportEntityFactory entityFactory, TransportFactory transportFactory) {
-        this.entityFactory = entityFactory;
+    public TransportConverter(TransportFactory transportFactory) {
         this.transportFactory = transportFactory;
     }
 
@@ -170,45 +166,6 @@ public class TransportConverter{
         return builder.toString();
     }
 
-    public TransportEntity convertPojoToTransportEntity(TransportPojo inPojo) {
-        TransportEntity resultTransport = entityFactory.getTransportEntity(inPojo.getTransportType());
 
-        resultTransport.setId(inPojo.getId());
-        resultTransport.setColor(inPojo.getColor());
-        resultTransport.setManufactureYear(inPojo.getManufactureYear());
-        resultTransport.setEnergySource(inPojo.getEnergySource());
-
-        if (resultTransport instanceof PassengerTransportEntity) {
-            ((PassengerTransportEntity) resultTransport).setPassengersCount(inPojo.getPassengersCount());
-            if (resultTransport instanceof PassengerCarEntity) {
-                ((PassengerCarEntity) resultTransport).setTransmission(inPojo.getTransmission());
-            }
-        } else {
-            ((TruckEntity) resultTransport).setLoad(inPojo.getLoad());
-        }
-
-        return resultTransport;
-    }
-
-    public Transport convertTransportEntityToTransport(TransportEntity inEntity){
-        Transport resultTransport = transportFactory.getTransport(inEntity.getTransportType());
-
-        resultTransport.setId(inEntity.getId());
-        resultTransport.setMark(inEntity.getMark().getDescription());
-        resultTransport.setColor(inEntity.getColor());
-        resultTransport.setManufactureYear(inEntity.getManufactureYear());
-        resultTransport.setEnergySource(inEntity.getEnergySource());
-        if (inEntity instanceof PassengerTransportEntity) {
-            ((PassengerTransport) resultTransport).setPassengersCount(((PassengerTransportEntity) inEntity).getPassengersCount());
-            if (inEntity instanceof PassengerCarEntity) {
-                ((PassengerCar) resultTransport).setTransmission(((PassengerCarEntity) inEntity).getTransmission());
-            }
-        } else {
-            ((Truck) resultTransport).setLoad(((TruckEntity)inEntity).getLoad());
-        }
-
-        return resultTransport;
-
-    }
 
 }

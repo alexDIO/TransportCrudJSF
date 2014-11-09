@@ -1,19 +1,12 @@
 package forweb.jsf;
 
-import forweb.TransportMapHolder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import transport.storages.TransportStorage;
-
-import javax.annotation.Resource;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 /**
  * Created by olomakovskyi on 11/6/2014.
  */
-@Component
+
 @ManagedBean(name = "manager", eager = true)
 @RequestScoped
 public class JSFTransportManager {
@@ -27,13 +20,8 @@ public class JSFTransportManager {
     private String transmission;
     private int load;
 
-    @ManagedProperty("#{mapHolder}")
-    private TransportMapHolder mapHolder;
+    public JSFTransportManager(){
 
-    private TransportStorage storage;
-
-    public JSFTransportManager() {
-        mapHolder.getMap();
     }
 
     public int getId() {
@@ -106,21 +94,5 @@ public class JSFTransportManager {
 
     public void setLoad(int load) {
         this.load = load;
-    }
-
-    public TransportStorage getStorage() {
-        return storage;
-    }
-
-    public void setStorage(TransportStorage storage) {
-        this.storage = storage;
-    }
-
-    public TransportMapHolder getMapHolder() {
-        return mapHolder;
-    }
-
-    public void setMapHolder(TransportMapHolder mapHolder) {
-        this.mapHolder = mapHolder;
     }
 }
