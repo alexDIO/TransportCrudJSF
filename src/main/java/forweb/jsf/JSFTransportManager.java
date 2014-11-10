@@ -1,7 +1,16 @@
 package forweb.jsf;
 
+import transport.TransportPropertiesHolder;
+import transport.classes.Transport;
+import transport.classes.TransportConverter;
+import transport.classes.TransportFactory;
+import transport.storages.TransportStorage;
+import transport.storages.TransportStorageTXT;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import java.io.IOException;
+import java.util.Map;
 
 /**
  * Created by olomakovskyi on 11/6/2014.
@@ -19,9 +28,17 @@ public class JSFTransportManager {
     private String energySource;
     private String transmission;
     private int load;
+    private String action;
+    private TransportStorage storage;
+    private Map<Integer, Transport> storedTransport;
 
     public JSFTransportManager(){
-
+        try {
+            this.storage = new TransportStorageTXT(new TransportPropertiesHolder(), new TransportConverter(new TransportFactory()));
+            storedTransport = storage.getAllTransport();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public int getId() {
@@ -94,5 +111,25 @@ public class JSFTransportManager {
 
     public void setLoad(int load) {
         this.load = load;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+        switch (action){
+            case "add":
+
+        }
+    }
+
+    public Map<Integer, Transport> getStoredTransport() {
+        return storedTransport;
+    }
+
+    public void setStoredTransport(Map<Integer, Transport> storedTransport) {
+        this.storedTransport = storedTransport;
     }
 }

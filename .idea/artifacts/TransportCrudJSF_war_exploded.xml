@@ -10,8 +10,6 @@
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.2.8" />
           <element id="library" level="project" name="Maven: com.sun.faces:jsf-impl:2.2.8" />
           <element id="library" level="project" name="Maven: com.sun.el:el-ri:1.0" />
-          <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
           <element id="library" level="project" name="Maven: net.sf.supercsv:super-csv:2.2.0" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi:3.11-beta2" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />

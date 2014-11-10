@@ -96,6 +96,21 @@
             </tr>
         </table>
     </h:form>
+    <table>
+        <h:form>
+        <ui:repeat value="#{manager.storedTransport}" var="item">
+            <tr>
+                <td>
+                    <h:outputText value="#{item}"/>
+                    <h:commandButton value="Delete"/>
+                    <h:commandButton value="Update"/>
+                    <h:inputHidden value="#{item.key}"/>
+                </td>
+            </tr>
+
+        </ui:repeat>
+        </h:form>
+    </table>
 
 </h:body>
 </html>
